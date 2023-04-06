@@ -15,9 +15,10 @@ defmodule M.Application do
       # Start Finch
       {Finch, name: M.Finch},
       # Start the Endpoint (http/https)
-      MWeb.Endpoint
+      MWeb.Endpoint,
+      
       # Start a worker by calling: M.Worker.start_link(arg)
-      # {M.Worker, arg}
+      M.Data
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
