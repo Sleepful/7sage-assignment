@@ -47,7 +47,8 @@ defmodule M.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:explorer, "~> 0.5.6"}
+      {:explorer, "~> 0.5.6"},
+      {:vega_lite, "~> 0.1"}
     ]
   end
 

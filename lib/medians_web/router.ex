@@ -18,6 +18,7 @@ defmodule MWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    post "/", PageController, :query
   end
 
   # Other scopes may use custom stacks.
