@@ -2,9 +2,6 @@ defmodule M.Data do
   use GenServer
   require Explorer.DataFrame, as: DF
   
-  @root_dir File.cwd!()
-  @data_file Path.join([ @root_dir, "priv", "static", "data.csv" ])
-
   def start_link(_arg) do
     params = []
     GenServer.start_link(__MODULE__, params, name: __MODULE__)
@@ -46,7 +43,10 @@ defmodule M.Data do
 
   @impl true
   def init(_params) do
-    {:ok, data_frame } = DF.from_csv(@data_file, delimiter: "\t")
+    
+    dir = Application.app_dir(:medians, [ "priv", "static"])
+    data_file = Path.join([dir, "data.csv"])
+    {:ok, data_frame } = DF.from_csv(data_file, delimiter: "\t")
     to_int = fn str -> 
       if str == "Unranked" || str == nil do
         # nils will get dropped later
