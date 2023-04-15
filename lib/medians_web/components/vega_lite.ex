@@ -6,7 +6,7 @@ defmodule MWeb.VegaLite do
     rows = assigns[:median_rows]
     vg_rows = rows_to_vegalite(rows)
     spec =
-      VegaLite.new(title: "Demo", width: :container, height: :container, padding: 5)
+      VegaLite.new(title: "LSAT results across time", width: :container, height: :container, padding: 5)
       |> VegaLite.data_from_values(vg_rows)
       |> VegaLite.mark(:line, yOffset: 120)
       |> VegaLite.encode_field(:x, "year", type: :nominal)
