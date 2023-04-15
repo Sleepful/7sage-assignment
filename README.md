@@ -5,6 +5,8 @@ Live at: https://lsat.fly.dev/
 To start your Phoenix server:
 
   * Run `mix setup` to install and setup dependencies
+  * Run `cd assets && npm i` to install vega-lite JS package
+  * Go back to root directory `cd ..`
   * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
